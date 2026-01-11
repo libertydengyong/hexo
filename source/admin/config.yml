@@ -1,0 +1,48 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "source/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "posts"
+    label: "文章"
+    folder: "source/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "发布日期", name: "date", widget: "datetime" }
+      - { label: "正文", name: "body", widget: "markdown" }
+      - { label: "分类", name: "categories", widget: "list" }
+      - { label: "标签", name: "tags", widget: "list" }
+      - { label: "封面图", name: "thumbnail", widget: "image" }
+      - { label: "摘要", name: "summary", widget: "text" }
+      - { label: "作者", name: "author", widget: "string", default: "Dw" }
+      - { label: "置顶", name: "top", widget: "boolean", default: false }
+      - { label: "隐藏", name: "hidden", widget: "boolean", default: false }
+      - { label: "永久链接", name: "permalink", widget: "string", required: false }
+      - { label: "自定义字段", name: "custom", widget: "object", required: false }
+      - { label: "阅读时长", name: "reading_time", widget: "number", required: false }
+      - { label: "更新日期", name: "updated", widget: "datetime", required: false }
+      - { label: "草稿", name: "draft", widget: "boolean", default: false }
+      - { label: "评论开关", name: "comments", widget: "boolean", default: true }
+      - { label: "关键词", name: "keywords", widget: "list", required: false }
+      - { label: "描述", name: "description", widget: "text", required: false }
+      - { label: "缩略名", name: "slug", widget: "string", required: false }
+      - { label: "语言", name: "lang", widget: "string", default: "zh-CN" }
+      - { label: "封面图描述", name: "thumbnail_alt", widget: "string", required: false }
+      - { label: "外部链接", name: "external_link", widget: "string", required: false }
+      - { label: "外部跳转方式", name: "external_link_target", widget: "string", default: "_blank" }
+      - { label: "数学公式支持", name: "math", widget: "boolean", default: false }
+      - { label: "Mermaid 图表", name: "mermaid", widget: "boolean", default: false }
+      - { label: "文章布局", name: "layout", widget: "string", default: "post" }
+      - { label: "版权声明", name: "copyright", widget: "string", required: false }
+      - { label: "置顶", name: "sticky", widget: "number", required: false }
+      - { label: "隐藏文章", name: "hide", widget: "boolean", default: false }
+      - { label: "评论开关", name: "comments", widget: "boolean", default: true }
+      - { label: "更新日期", name: "updated", widget: "datetime", required: false }
+      - { label: "自定义字段", name: "custom", widget: "object", required: false }
+
+
+
+
