@@ -1,8 +1,3 @@
----
-title: hexo快捷命令写文章
-date: 2026-01-14 15:19:35
-tags:
----
 先检测是否是bash，输入echo $SHELL，            必须是/bin/sh
 
 
@@ -84,7 +79,9 @@ hexo d
 以后只要输入x加文章标题就可以进入编辑框，并且文章自动推送到github
 
 
-hexo还可以这样一键生成 + 部署:
+而hexo一键生成 + 部署则是这样:
+
+
 
 nano ~/.bashrc     输入:
 
@@ -111,3 +108,5 @@ alias h='cd /var/www/blog1 && hexo clean && hexo g && hexo d'
 
 
 以后输入h，Hexo 就一键生成 + 部署。
+
+
