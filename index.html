@@ -145,6 +145,492 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/14/hexo%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4%E5%86%99%E6%96%87%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/14/hexo%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4%E5%86%99%E6%96%87%E7%AB%A0/" class="post-title-link" itemprop="url">hexo快捷命令写文章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-01-14 15:19:35 / Modified: 15:21:32" itemprop="dateCreated datePublished" datetime="2026-01-14T15:19:35+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>先检测是否是bash，输入echo $SHELL，            必须是&#x2F;bin&#x2F;sh</p>
+<p>nano &#x2F;usr&#x2F;local&#x2F;bin&#x2F;x，输入</p>
+<p>#!&#x2F;bin&#x2F;bash</p>
+<p>cd &#x2F;var&#x2F;www&#x2F;blog1 || exit 1</p>
+<h1 id="捕获完整命令名（如-x测试文章ABC）"><a href="#捕获完整命令名（如-x测试文章ABC）" class="headerlink" title="捕获完整命令名（如 x测试文章ABC）"></a>捕获完整命令名（如 x测试文章ABC）</h1><p>cmd&#x3D;”$0”</p>
+<h1 id="去掉前缀-x，剩下的就是标题"><a href="#去掉前缀-x，剩下的就是标题" class="headerlink" title="去掉前缀 x，剩下的就是标题"></a>去掉前缀 x，剩下的就是标题</h1><p>title&#x3D;”${cmd#x}”</p>
+<p>if [ -z “$title” ]; then</p>
+<p>  echo “标题不能为空”</p>
+<p>  exit 1</p>
+<p>fi</p>
+<p>file&#x3D;”source&#x2F;_posts&#x2F;${title}.md”</p>
+<h1 id="如果文件不存在就创建空白文件"><a href="#如果文件不存在就创建空白文件" class="headerlink" title="如果文件不存在就创建空白文件"></a>如果文件不存在就创建空白文件</h1><p>[ -f “$file” ] || touch “$file”</p>
+<h1 id="打开编辑器"><a href="#打开编辑器" class="headerlink" title="打开编辑器"></a>打开编辑器</h1><p>nano “$file”</p>
+<h1 id="自动-push"><a href="#自动-push" class="headerlink" title="自动 push"></a>自动 push</h1><p>git add .</p>
+<p>git commit -m “post: $title”</p>
+<p>git push</p>
+<h1 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h1><p>hexo clean</p>
+<p>hexo g</p>
+<p>hexo d</p>
+<p>授予权限:    chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;x</p>
+<p>以后只要输入x加文章标题就可以进入编辑框，并且文章自动推送到github</p>
+<p>hexo还可以这样一键生成 + 部署:</p>
+<p>nano ~&#x2F;.bashrc     输入:</p>
+<p>alias h&#x3D;’cd &#x2F;var&#x2F;www&#x2F;blog1 &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo d’</p>
+<p>保存后输入：source ~&#x2F;.bashrc</p>
+<p>确认 alias 是否生效:</p>
+<p>输入alias h</p>
+<p>应该是:   alias h&#x3D;’cd &#x2F;var&#x2F;www&#x2F;blog1 &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo d’</p>
+<p>以后输入h，Hexo 就一键生成 + 部署。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/14/%E6%A0%87%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/14/%E6%A0%87%E9%A2%98/" class="post-title-link" itemprop="url">标题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-14 15:17:40" itemprop="dateCreated datePublished" datetime="2026-01-14T15:17:40+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/14/hexo%E4%B8%80%E9%94%AE%E7%94%9F%E6%88%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/14/hexo%E4%B8%80%E9%94%AE%E7%94%9F%E6%88%90/" class="post-title-link" itemprop="url">hexo一键生成</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-14 14:39:48" itemprop="dateCreated datePublished" datetime="2026-01-14T14:39:48+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/14/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/14/hexo/" class="post-title-link" itemprop="url">hexo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-14 14:13:52" itemprop="dateCreated datePublished" datetime="2026-01-14T14:13:52+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/14/e-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/14/e-md/" class="post-title-link" itemprop="url">e.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-14 12:46:16" itemprop="dateCreated datePublished" datetime="2026-01-14T12:46:16+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/14/w-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/14/w-md/" class="post-title-link" itemprop="url">w.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-14 12:45:51" itemprop="dateCreated datePublished" datetime="2026-01-14T12:45:51+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/14/q-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/14/q-md/" class="post-title-link" itemprop="url">q.md</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-14 12:43:15" itemprop="dateCreated datePublished" datetime="2026-01-14T12:43:15+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/14/%E6%96%B0%E6%96%87%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/14/%E6%96%B0%E6%96%87%E7%AB%A0/" class="post-title-link" itemprop="url">新文章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-14 12:40:54" itemprop="dateCreated datePublished" datetime="2026-01-14T12:40:54+08:00">2026-01-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2026/01/11/S-UI-%E4%B8%AD%E8%BD%AC%E8%90%BD%E5%9C%B0%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -288,604 +774,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2025/12/31/%E4%B8%80%E4%B8%AA%E6%8D%AE%E8%AF%B4%E5%8F%AF%E4%BB%A5%E6%8E%A5%E7%A0%81%E6%B3%A8%E5%86%8Cgv%E7%9A%84%E7%9F%AD%E4%BF%A1%E7%AB%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/12/31/%E4%B8%80%E4%B8%AA%E6%8D%AE%E8%AF%B4%E5%8F%AF%E4%BB%A5%E6%8E%A5%E7%A0%81%E6%B3%A8%E5%86%8Cgv%E7%9A%84%E7%9F%AD%E4%BF%A1%E7%AB%99/" class="post-title-link" itemprop="url">一个据说可以接码注册GV的短信站</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-12-31 16:17:40" itemprop="dateCreated datePublished" datetime="2025-12-31T16:17:40+08:00">2025-12-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-01-13 22:37:48" itemprop="dateModified" datetime="2026-01-13T22:37:48+08:00">2026-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一个据说可以接码注册GV的短信站 <a target="_blank" rel="noopener" href="https://www.smspool.net/">https://www.smspool.net/</a>   还有这两个据说也可以 <a target="_blank" rel="noopener" href="https://sms-bus.com/">https://sms-bus.com</a> <a target="_blank" rel="noopener" href="https://daisysms.com/">https://daisysms.com</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2025/12/23/%E5%A4%9A%E5%8D%8F%E8%AE%AE%E4%BB%A3%E7%90%86%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC-v2-0-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%85%B1%E5%AD%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/12/23/%E5%A4%9A%E5%8D%8F%E8%AE%AE%E4%BB%A3%E7%90%86%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC-v2-0-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%9A%E5%8D%8F%E8%AE%AE%E5%85%B1%E5%AD%98/" class="post-title-link" itemprop="url">多协议代理一键脚本 v2.0 - 自定义多协议共存</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-12-23 14:33:22" itemprop="dateCreated datePublished" datetime="2025-12-23T14:33:22+08:00">2025-12-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-01-13 22:37:48" itemprop="dateModified" datetime="2026-01-13T22:37:48+08:00">2026-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vps%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">vps技巧</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>多协议代理一键脚本 v2.0 - 自定义多协议共存</p>
-<hr>
-<p>wget -O vless.sh <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Chil30/vless-all-in-one/main/vless.sh">https://raw.githubusercontent.com/Chil30/vless-all-in-one/main/vless.sh</a> &amp;&amp; chmod +x vless.sh &amp;&amp; bash vless.sh</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2025/12/12/linux-%E4%B8%80%E9%94%AE%E5%88%9D%E5%A7%8B%E5%8C%96-ssh-%E5%8A%A0%E5%9B%BA%E8%84%9A%E6%9C%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/12/12/linux-%E4%B8%80%E9%94%AE%E5%88%9D%E5%A7%8B%E5%8C%96-ssh-%E5%8A%A0%E5%9B%BA%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">Linux 一键初始化 & SSH 加固脚本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-12-12 21:12:01" itemprop="dateCreated datePublished" datetime="2025-12-12T21:12:01+08:00">2025-12-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-01-13 22:37:48" itemprop="dateModified" datetime="2026-01-13T22:37:48+08:00">2026-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vps%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">vps技巧</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Linux 一键初始化 &amp; SSH 加固脚本 curl -fsSL <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/247like/linux-ssh-init-sh/main/init.sh">https://raw.githubusercontent.com/247like/linux-ssh-init-sh/main/init.sh</a> -o init.sh &amp;&amp; chmod +x init.sh &amp;&amp; .&#x2F;init.sh   来源：<a target="_blank" rel="noopener" href="https://github.com/247like/linux-ssh-init-sh">https://github.com/247like/linux-ssh-init-sh</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2025/11/30/linux-tcp-ip-%E5%92%8C-bbr-%E5%8F%82%E6%95%B0%E6%99%BA%E8%83%BD%E4%BC%98%E5%8C%96%E8%84%9A%E6%9C%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/11/30/linux-tcp-ip-%E5%92%8C-bbr-%E5%8F%82%E6%95%B0%E6%99%BA%E8%83%BD%E4%BC%98%E5%8C%96%E8%84%9A%E6%9C%AC/" class="post-title-link" itemprop="url">Linux TCP/IP 和 BBR 参数智能优化脚本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-11-30 20:51:47" itemprop="dateCreated datePublished" datetime="2025-11-30T20:51:47+08:00">2025-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-01-13 22:37:48" itemprop="dateModified" datetime="2026-01-13T22:37:48+08:00">2026-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Linux TCP&#x2F;IP 和 BBR 参数智能优化脚本 bash &lt;(curl -sL <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/yahuisme/network-optimization/main/script.sh">https://raw.githubusercontent.com/yahuisme/network-optimization/main/script.sh</a>)   来源：<a target="_blank" rel="noopener" href="https://github.com/yahuisme/network-optimization">https://github.com/yahuisme/network-optimization</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2025/11/25/vps%E4%B8%80%E9%94%AE%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%EF%BC%9A-bash/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/11/25/vps%E4%B8%80%E9%94%AE%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%EF%BC%9A-bash/" class="post-title-link" itemprop="url">VPS一键系统管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-11-25 15:47:13" itemprop="dateCreated datePublished" datetime="2025-11-25T15:47:13+08:00">2025-11-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-01-13 22:37:48" itemprop="dateModified" datetime="2026-01-13T22:37:48+08:00">2026-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vps%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">vps工具</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>VPS一键系统管理： bash &lt;(curl -sL sh.cici.one)   只支持DEBIAN,ubuntu系统</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2025/11/17/s-ui%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/11/17/s-ui%E9%9D%A2%E6%9D%BF%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">S-UI面板搭建</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-11-17 16:25:54" itemprop="dateCreated datePublished" datetime="2025-11-17T16:25:54+08:00">2025-11-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-01-13 22:37:48" itemprop="dateModified" datetime="2026-01-13T22:37:48+08:00">2026-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vps%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">vps技巧</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>S-UI面板搭建： bash &lt;(curl -Ls <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/alireza0/s-ui/master/install.sh">https://raw.githubusercontent.com/alireza0/s-ui/master/install.sh</a>) 项目地址：<a target="_blank" rel="noopener" href="https://github.com/alireza0/s-ui">https://github.com/alireza0/s-ui</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2025/11/07/%E5%AE%9A%E6%9C%9F%E8%87%AA%E5%8A%A8%E6%B8%85%E7%90%86vps/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/11/07/%E5%AE%9A%E6%9C%9F%E8%87%AA%E5%8A%A8%E6%B8%85%E7%90%86vps/" class="post-title-link" itemprop="url">定期自动清理vps</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-11-07 19:06:37" itemprop="dateCreated datePublished" datetime="2025-11-07T19:06:37+08:00">2025-11-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-01-13 22:37:48" itemprop="dateModified" datetime="2026-01-13T22:37:48+08:00">2026-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vps%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index"><span itemprop="name">vps技巧</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>步骤一：创建脚本文件： nano &#x2F;usr&#x2F;local&#x2F;bin&#x2F;clean_vps.sh 粘贴以下内容： #!&#x2F;bin&#x2F;bash docker system prune -af apt clean rm -rf &#x2F;var&#x2F;log&#x2F;*.gz &#x2F;var&#x2F;log&#x2F;*.1 &#x2F;tmp&#x2F;* 保存并退出（按Ctrl+O →回车→ Ctrl+X） 赋予执行权限： chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;clean_vps.sh   步骤二：添加定时任务 运行命令默认设置编辑器为nano： export VISUAL&#x3D;nano 运行crontab -e 在文件末添加 0 3 * * * &#x2F;usr&#x2F;local&#x2F;bin&#x2F;clean_vps.sh &gt;&#x2F;dev&#x2F;null 2&gt;&amp;1   意为每天清理</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://freedomgpt.top/2025/10/30/aeroshell-%E6%99%BA%E8%83%BD%E7%BB%88%E7%AB%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/10/30/aeroshell-%E6%99%BA%E8%83%BD%E7%BB%88%E7%AB%AF/" class="post-title-link" itemprop="url">Aeroshell 智能终端</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-10-30 21:20:21" itemprop="dateCreated datePublished" datetime="2025-10-30T21:20:21+08:00">2025-10-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2026-01-13 22:37:48" itemprop="dateModified" datetime="2026-01-13T22:37:48+08:00">2026-01-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vps%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">vps工具</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Aeroshell 智能终端 <a target="_blank" rel="noopener" href="https://termdev.com/">https://termdev.com/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -951,7 +843,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
