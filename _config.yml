@@ -106,3 +106,8 @@ deploy:
   repo: https://github.com/libertydengyong/hexo
   branch: gh-pages
 
+search:
+  path: search.json
+  field: post
+  format: html
+

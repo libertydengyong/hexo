@@ -1,3 +1,13 @@
+---
+title: hexo快捷命令写文章
+
+date: 2026-01-14 15:00:00
+
+tags:
+---
+
+hexo快捷命令写文章
+
 先检测是否是bash，输入echo $SHELL，            必须是/bin/sh
 
 
