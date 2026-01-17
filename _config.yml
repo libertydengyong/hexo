@@ -7,12 +7,12 @@ asset_link_prefix: https://ziyouhua.b-cdn.net
 title: Hexo
 subtitle: ''
 description: ''
-url:https://ziyouhua.b-cdn.net
-keywords:
+
+keywords: ''
 author: John Doe
 language: en
 timezone: ''
-url: 
+ 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://freedomgpt.top
