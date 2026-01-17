@@ -1,16 +1,18 @@
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
+asset_link_prefix: https://ziyouhua.b-cdn.net
 
 # Site
 title: Hexo
 subtitle: ''
 description: ''
+url:https://ziyouhua.b-cdn.net
 keywords:
 author: John Doe
 language: en
 timezone: ''
-
+url: 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://freedomgpt.top
