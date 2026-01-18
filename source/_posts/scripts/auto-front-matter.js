@@ -41,3 +41,4 @@ hexo.extend.filter.register('before_post_render', function (data) {
 
     data.cover = `/images/${y}/${m}/${d}/cover.jpg`;
       }
+return data; });
