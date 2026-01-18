@@ -110,4 +110,6 @@ deploy:
 
 skip_render:
   - admin/**
+scripts:
+  - scripts/auto-front-matter.js
 
