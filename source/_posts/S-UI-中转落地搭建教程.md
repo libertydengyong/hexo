@@ -9,7 +9,7 @@ tags:
 
 https://www.nodeseek.com/post-471245-1
 
-<!-- more --> 
+<!-- 全文 --> 
 ##s-ui面板安装：
 
 Linux/macOS 安装:

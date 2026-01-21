@@ -113,3 +113,6 @@ search:
   field: post
   format: html
 
+cdn:
+  enable: true
+  base: https://cdn.jsdelivr.net/gh/libertydengyong/hexo@latest/
