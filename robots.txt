@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://freedomgpt.top/sitemap.xml
