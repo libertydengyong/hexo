@@ -133,8 +133,5 @@ minify:
   css:
     sourceMap: false
 
-# Hexo-excerpt 插件配置
-excerpt:
-  depth: 3
-  excerpt_length: 150
-  truncate_tokens: ["<section>", "<div class=\"note\">"]
+
+
